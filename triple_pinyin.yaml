@@ -1,0 +1,45 @@
+use_default_layout:
+  __append:
+    # 把聲調放在聲母韻母之間
+    - xform|([iuvaoeEAIOUMNKGR]+)([1-5])$|$2$1|
+    # 聲介
+    - xform/^([bpmfdtnlgkhjqxZCSrzcs][1-5][iuv])$/$1,/
+    # 介韻
+    - xform/^([1-5][iuv][aoeEAIOUMNKGR]+)$/0$1/
+    # 唯聲母
+    - xform/^([ZCSrzcs][1-5])$/$1i/
+    # 唯介音
+    - xform/^([1-5][iuv])$/|$1/
+    # 唯韻母
+    - xform/^([1-5])([aoeEAIOUMNKGR]+)$/$2Y$1/
+    # == 配按鍵 ==
+    # 換成眞注音
+    - 'xlit|bpmfdtnlgkhjqxZCSrzcsiuvaoeEAIOUMNKGR|ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦ|'
+    # 聲母（ㄍㄎㄙ與ㄐㄑㄒ合并）
+    - 'xlit|ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙ|aqmzdexwfrhfrsjukilos|'
+    # 介音聲調
+    - xform/1ㄧ/j/
+    - xform/2ㄧ/k/
+    - xform/3ㄧ/l/
+    - xform/4ㄧ/m/
+    - xform/5ㄧ/h/
+    - xform/1ㄨ/u/
+    - xform/2ㄨ/i/
+    - xform/3ㄨ/o/
+    - xform/4ㄨ/p/
+    - xform/5ㄨ/y/
+    - xform/1ㄩ/r/
+    - xform/2ㄩ/e/
+    - xform/3ㄩ/w/
+    - xform/4ㄩ/q/
+    - xform/5ㄩ/t/
+    - xform/Y1/v/
+    - xform/Y2/c/
+    - xform/Y3/x/
+    - xform/Y4/z/
+    - xform/Y5/b/
+    - 'xlit|12345|fdsag|'
+    # 韻母
+    - 'xlit|ㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦ|jkdluoriwsqae|'
+    # 無聲唯介無韻
+    - 'xlit/0|,/vcf/'
