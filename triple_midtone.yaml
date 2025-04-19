@@ -26,27 +26,27 @@ use_qwerty_layout:
     # 聲母（ㄍㄎㄙ與ㄐㄑㄒ合并）
     - 'xlit|ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙ|aqmzdexwfrhfrsjukilos|'
     # 介音聲調
-    - xform/1ㄧ/j/
-    - xform/2ㄧ/k/
-    - xform/3ㄧ/l/
-    - xform/4ㄧ/m/
+    - xform/1ㄧ/m/
+    - xform/2ㄧ/l/
+    - xform/3ㄧ/k/
+    - xform/4ㄧ/j/
     - xform/5ㄧ/h/
-    - xform/1ㄨ/u/
-    - xform/2ㄨ/i/
-    - xform/3ㄨ/o/
-    - xform/4ㄨ/p/
+    - xform/1ㄨ/p/
+    - xform/2ㄨ/o/
+    - xform/3ㄨ/i/
+    - xform/4ㄨ/u/
     - xform/5ㄨ/y/
-    - xform/1ㄩ/v/
-    - xform/2ㄩ/c/
-    - xform/3ㄩ/x/
-    - xform/4ㄩ/z/
+    - xform/1ㄩ/z/
+    - xform/2ㄩ/x/
+    - xform/3ㄩ/c/
+    - xform/4ㄩ/v/
     - xform/5ㄩ/b/
-    - xform/Y1/r/
-    - xform/Y2/e/
-    - xform/Y3/w/
-    - xform/Y4/q/
+    - xform/Y1/q/
+    - xform/Y2/w/
+    - xform/Y3/e/
+    - xform/Y4/r/
     - xform/Y5/t/
-    - 'xlit|12345|fdsag|'
+    - xlit|12345|asdfg|
     # 韻母
     - 'xlit|ㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦ|jkdluoriwsqae|'
     # 無聲、唯介、無韻、常用字音
