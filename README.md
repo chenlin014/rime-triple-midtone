@@ -1,7 +1,7 @@
-# 介聲三拼
+# 中調三拼
 配方： ℞ triple-pinyin
 
-Rime 介聲三拼方案
+Rime 中調三拼方案
 
 ## 依賴于
 - [地球拼音](https://github.com/rime/rime-terra-pinyin) ℞ **`terra-pinyin`**
