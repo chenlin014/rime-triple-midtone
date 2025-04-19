@@ -3,8 +3,9 @@ zhuyin_to_midtone:
     # 常用字音
     # 麽的呢了個著
     - derive/^([mdnlgZ])e5$/9$1/
-    # 嗎和
+    # 嗎頭和
     - derive/^ma5$/9b/
+    - derive/^tou5$/9t/
     - derive/^he2$/9h/
     # 把聲調放在聲母和韻母之間
     - xform|([iuvaoeEAIOUMNKGR]+)([1-5])$|$2$1|
@@ -20,6 +21,8 @@ zhuyin_to_midtone:
     - xform/^([1-5])([aoeEAIOUMNKGR]+)$/$2Y$1/
     # 換成眞注音
     - 'xlit|bpmfdtnlgkhjqxZCSrzcsiuvaoeEAIOUMNKGR|ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦ|'
+
+# == 鍵盤佈局 ==
 
 use_qwerty_layout:
   __append:
@@ -51,3 +54,34 @@ use_qwerty_layout:
     - 'xlit|ㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦ|jkdluoriwsqae|'
     # 無聲、唯介、無韻、常用字音
     - 'xlit/0|,9/vcfg/'
+
+use_wikibase_layout:
+  __append:
+    # 聲母（ㄍㄎㄙ與ㄐㄑㄒ合并）
+    - 'xlit|ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙ|npmfigbyauhauselrvoks|'
+    # 介音聲調
+    - xform/1ㄧ/t/
+    - xform/2ㄧ/n/
+    - xform/3ㄧ/i/
+    - xform/4ㄧ/a/
+    - xform/5ㄧ/h/
+    - xform/1ㄨ/j/
+    - xform/2ㄨ/p/
+    - xform/3ㄨ/g/
+    - xform/4ㄨ/u/
+    - xform/5ㄨ/m/
+    - xform/1ㄩ/x/
+    - xform/2ㄩ/w/
+    - xform/3ㄩ/f/
+    - xform/4ㄩ/c/
+    - xform/5ㄩ/y/
+    - xform/Y1/z/
+    - xform/Y2/v/
+    - xform/Y3/k/
+    - xform/Y4/l/
+    - xform/Y5/b/
+    - xlit|12345|sroed|
+    # 韻母
+    - 'xlit|ㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦ|aoeiuglkpnsrv|'
+    # 無聲、唯介、無韻、常用字音
+    - 'xlit/0|,9/tctd/'
