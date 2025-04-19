@@ -1,5 +1,11 @@
 zhuyin_to_midtone:
   __append:
+    # 常用字音
+    # 麽的呢了個著
+    - derive/^([mdnlgZ])e5$/9$1/
+    # 嗎和
+    - derive/^ma5$/9b/
+    - derive/^he2$/9h/
     # 把聲調放在聲母和韻母之間
     - xform|([iuvaoeEAIOUMNKGR]+)([1-5])$|$2$1|
     # 聲介
@@ -43,5 +49,5 @@ use_qwerty_layout:
     - 'xlit|12345|fdsag|'
     # 韻母
     - 'xlit|ㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦ|jkdluoriwsqae|'
-    # 無聲唯介無韻
-    - 'xlit/0|,/vcf/'
+    # 無聲、唯介、無韻、常用字音
+    - 'xlit/0|,9/vcfg/'
