@@ -2,8 +2,8 @@
 # encoding: utf-8
 
 schema:
-  schema_id: triple_pinyin
-  name: 三拼
+  schema_id: triple_midtone
+  name: 中調三拼
   version: "0.0"
   author:
     - 「陳林」<1chen0bryan@gmail.com>
@@ -54,7 +54,7 @@ speller:
   algebra:
     __patch:
       - zhuyin:/pinyin_to_zhuyin
-      - triple_pinyin:/use_default_layout
+      - triple_midtone:/use_default_layout
 
 translator:
   dictionary: terra_pinyin
