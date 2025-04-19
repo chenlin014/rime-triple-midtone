@@ -54,7 +54,8 @@ speller:
   algebra:
     __patch:
       - zhuyin:/pinyin_to_zhuyin
-      - triple_midtone:/use_default_layout
+      - triple_midtone:/zhuyin_to_midtone
+      - triple_midtone:/use_qwerty_layout
 
 translator:
   dictionary: terra_pinyin

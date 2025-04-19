@@ -1,6 +1,6 @@
-use_default_layout:
+zhuyin_to_midtone:
   __append:
-    # 把聲調放在聲母韻母之間
+    # 把聲調放在聲母和韻母之間
     - xform|([iuvaoeEAIOUMNKGR]+)([1-5])$|$2$1|
     # 聲介
     - xform/^([bpmfdtnlgkhjqxZCSrzcs][1-5][iuv])$/$1,/
@@ -8,13 +8,15 @@ use_default_layout:
     - xform/^([1-5][iuv][aoeEAIOUMNKGR]+)$/0$1/
     # 唯聲母
     - xform/^([ZCSrzcs][1-5])$/$1i/
-    # 唯介音
+    # 唯介母
     - xform/^([1-5][iuv])$/|$1/
     # 唯韻母
     - xform/^([1-5])([aoeEAIOUMNKGR]+)$/$2Y$1/
-    # == 配按鍵 ==
     # 換成眞注音
     - 'xlit|bpmfdtnlgkhjqxZCSrzcsiuvaoeEAIOUMNKGR|ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦ|'
+
+use_qwerty_layout:
+  __append:
     # 聲母（ㄍㄎㄙ與ㄐㄑㄒ合并）
     - 'xlit|ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙ|aqmzdexwfrhfrsjukilos|'
     # 介音聲調
