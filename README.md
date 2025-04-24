@@ -1,5 +1,5 @@
 # 中調三拼
-配方： ℞ triple-pinyin
+配方： ℞ triple-midtone
 
 Rime 中調三拼方案
 
