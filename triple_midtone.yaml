@@ -1,5 +1,14 @@
 zhuyin_to_midtone:
   __append:
+    # 尖音
+    - derive/j([iv])/z$1/
+    - derive/q([iv])/c$1/
+    - derive/x([iv])/s$1/
+    # 團音
+    - derive/j([iv])/g$1/
+    - derive/q([iv])/k$1/
+    - derive/x([iv])/h$1/
+
     # 常用字音
     # 麽的呢了個著
     - derive/^([mdnlgZ])e5$/9$1/
@@ -7,6 +16,7 @@ zhuyin_to_midtone:
     - derive/^ma5$/9b/
     - derive/^tou5$/9t/
     - derive/^he2$/9h/
+
     # 把聲調放在聲母和韻母之間
     - xform|([iuvaoeEAIOUMNKGR]+)([1-5])$|$2$1|
     # 聲介
@@ -14,7 +24,7 @@ zhuyin_to_midtone:
     # 介韻
     - xform/^([1-5][iuv][aoeEAIOUMNKGR]+)$/0$1/
     # 唯聲母
-    - xform/^([ZCSrzcs][1-5])$/$1i/
+    - xform/^([ZCSrzcs][1-5])$/$1,/
     # 唯介母
     - xform/^([1-5][iuv])$/|$1/
     # 唯韻母
