@@ -5,93 +5,87 @@ zhuyin_to_midtone:
     - derive/q([iv])/c$1/
     - derive/x([iv])/s$1/
     # 團音
-    - derive/j([iv])/g$1/
-    - derive/q([iv])/k$1/
-    - derive/x([iv])/h$1/
+    - xform/j([iv])/g$1/
+    - xform/q([iv])/k$1/
+    - xform/x([iv])/h$1/
 
     # 常用字音
     # 麽的呢了個著
-    - derive/^([mdnlgZ])e5$/9$1/
-    # 嗎頭和
-    - derive/^ma5$/9b/
-    - derive/^tou5$/9t/
-    - derive/^he2$/9h/
+    - derive/^([mdnlgZ])e5$/常$1/
+    # 吧嗎頭和
+    - derive/^ba5$/常b/
+    - derive/^ma5$/常p/
+    - derive/^tou5$/常t/
+    - derive/^he2$/常h/
 
     # 把聲調放在聲母和韻母之間
-    - xform|([iuvaoeEAIOUMNKGR]+)([1-5])$|$2$1|
+    - xform/([iuvaoeEAIOUMNKGR]+)([1-5])$/$2$1/
+    # 無聲母
+    - xform/^([1-5][iuv]?[aoeEAIOUMNKGR]+)$/無$1/
     # 聲介
-    - xform/^([bpmfdtnlgkhjqxZCSrzcs][1-5][iuv])$/$1,/
-    # 介韻
-    - xform/^([1-5][iuv][aoeEAIOUMNKGR]+)$/0$1/
-    # 唯聲母
-    - xform/^([ZCSrzcs][1-5])$/$1,/
+    - xform/^([bpmfdtnlgkhjqxZCSrzcs][1-5][iuv])$/$1无/
+    # 「空韻」
+    - xform/^([ZCSrzcs][1-5])$/$1ㄭ/
     # 唯介母
-    - xform/^([1-5][iuv])$/|$1/
-    # 唯韻母
-    - xform/^([1-5])([aoeEAIOUMNKGR]+)$/$2Y$1/
+    - xform/^([1-5][iuv])$/介$1/
     # 換成眞注音
     - 'xlit|bpmfdtnlgkhjqxZCSrzcsiuvaoeEAIOUMNKGR|ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦ|'
+
+    # 介調組合的鍵位
+    # 上排
+    - xform/1ㄩ/甲/
+    - xform/2ㄩ/乙/
+    - xform/3ㄩ/丙/
+    - xform/4ㄩ/丁/
+    - xform/5ㄩ/戊/
+    - xform/5ㄨ/己/
+    - xform/4ㄨ/庚/
+    - xform/3ㄨ/辛/
+    - xform/2ㄨ/壬/
+    - xform/1ㄨ/癸/
+    # 下排
+    #- xform/Y1/子/
+    #- xform/Y2/丑/
+    #- xform/Y3/寅/
+    #- xform/Y4/卯/
+    #- xform/Y5/辰/
+    - xform/5ㄭ/巳/
+    - xform/4ㄭ/午/
+    - xform/3ㄭ/未/
+    - xform/2ㄭ/申/
+    - xform/1ㄭ/酉/
+    # 中排
+    - xform/1ㄧ/壹/
+    - xform/2ㄧ/貳/
+    - xform/3ㄧ/叄/
+    - xform/4ㄧ/肆/
+    - xform/5ㄧ/陸/
+    - xlit|54321|陸柒捌玖拾|
+
+    # 韻母的鍵位
+    - xlit|ㄣㄥㄤㄢㄦ无ㄚㄝㄛㄜ|壹貳叄肆伍陸柒捌玖拾|
+    - xlit|ㄞㄟㄠㄡ|庚辛午申|
 
 # == 鍵盤佈局 ==
 
 use_qwerty_layout:
   __append:
-    # 聲母（ㄍㄎㄏ與ㄐㄑㄒ合并）
-    - 'xlit|ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙ|aqmzdexwfrhfrhjukilos|'
-    # 介音聲調
-    - xform/1ㄧ/m/
-    - xform/2ㄧ/l/
-    - xform/3ㄧ/k/
-    - xform/4ㄧ/j/
-    - xform/5ㄧ/h/
-    - xform/1ㄨ/p/
-    - xform/2ㄨ/o/
-    - xform/3ㄨ/i/
-    - xform/4ㄨ/u/
-    - xform/5ㄨ/y/
-    - xform/1ㄩ/z/
-    - xform/2ㄩ/x/
-    - xform/3ㄩ/c/
-    - xform/4ㄩ/v/
-    - xform/5ㄩ/b/
-    - xform/Y1/q/
-    - xform/Y2/w/
-    - xform/Y3/e/
-    - xform/Y4/r/
-    - xform/Y5/t/
-    - xlit|12345|asdfg|
-    # 韻母
-    - 'xlit|ㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦ|jkdluoriwsqae|'
-    # 無聲、唯介、無韻、常用字音
-    - 'xlit/0|,9/vcfg/'
+    # 聲母布局
+    - xlit/ㄖㄔㄎㄊ＊＊ㄆㄘㄙ/qwertyuio/
+    - xlit/ㄕㄓㄍㄉㄈㄏㄅㄗㄌ/asdfghjkl/
+    - xlit/常介無ㄋ＊＊ㄇ/zxcvbnm/
+    # QWERTY
+    - xlit|甲乙丙丁戊己庚辛壬癸|qwertyuiop|
+    - xlit|壹貳叄肆伍陸柒捌玖拾|asdfghjkl;|
+    - xlit|子丑寅卯辰巳午未申酉|zxcvbnm,./|
 
 use_wikibase_layout:
   __append:
-    # 聲母（ㄍㄎㄏ與ㄐㄑㄒ合并）
-    - 'xlit|ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙ|npmfigbyauhauhelrvoks|'
-    # 介音聲調
-    - xform/1ㄧ/t/
-    - xform/2ㄧ/n/
-    - xform/3ㄧ/i/
-    - xform/4ㄧ/a/
-    - xform/5ㄧ/h/
-    - xform/1ㄨ/j/
-    - xform/2ㄨ/p/
-    - xform/3ㄨ/g/
-    - xform/4ㄨ/u/
-    - xform/5ㄨ/m/
-    - xform/1ㄩ/x/
-    - xform/2ㄩ/w/
-    - xform/3ㄩ/f/
-    - xform/4ㄩ/c/
-    - xform/5ㄩ/y/
-    - xform/Y1/z/
-    - xform/Y2/v/
-    - xform/Y3/k/
-    - xform/Y4/l/
-    - xform/Y5/b/
-    - xlit|12345|sroed|
-    # 韻母
-    - 'xlit|ㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦ|aoeiuglkpnsrv|'
-    # 無聲、唯介、無韻、常用字音
-    - 'xlit/0|,9/tctd/'
+    # 聲母布局
+    - xlit/ㄖㄔㄎㄊ＊＊ㄆㄘ/zvkl/'ug/
+    - xlit/ㄕㄓㄍㄉㄈㄏㄅㄗㄌㄙ/sroedhaint/
+    - xlit/常介無ㄋ＊＊ㄇ/xwfc,.mybq/
+    # WIKIBASE
+    - xlit|甲乙丙丁戊己庚辛壬癸|zvkl/'ugpj|
+    - xlit|壹貳叄肆伍陸柒捌玖拾|sroedhaint|
+    - xlit|子丑寅卯辰巳午未申酉|xwfc,.mybq|
